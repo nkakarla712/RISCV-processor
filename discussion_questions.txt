@@ -1,0 +1,39 @@
+1. I expect the delay to grow linearly with the number of inputs.
+I think this because the capacitance will grow and therefore create a longer delay
+. This was correct. For example the 128 bit was over double the 64 bit adder
+
+2. Since we are now optimized for delay, the smart inverter insertions will occur.
+Since we optimzie for delay, I would expect the program to be smarter and decrease the increase more.
+The reality did not match my expectations since the delay from 64 to 128 actually decreased.
+
+3. When the multisize is used, we are able to use larger gates. This allows for much smaller delay as well as slightly smaller area
+than the original library
+
+4. Here are the numbers
+
+ALU:
+    Gates: 1371
+    Area: 1264.56 um^2
+    Critical-path delay: 671.79 ps
+
+AddSub:
+    Gates: 256
+    Area: 372.13 um^2
+    Critical-path delay: 610.98 ps
+
+lt32:
+    Gates: 209
+    Area: 202.16 um^2
+    Critical-path delay: 236.96 ps
+
+sft32:
+    Gates: 209
+    Area: 202.16 um^2
+    Critical-path delay: 236.96 ps
+
+
+5. The delay is longer but area is lower for the regular one. 
+Therefore, I think it makes more sense to use the regular one
+This is because it will be used many time and the delay difference is not that much 
+while the area difference is very larger.
+
